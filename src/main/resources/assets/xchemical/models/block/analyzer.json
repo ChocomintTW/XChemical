@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "xchemical:block/analyzer_front",
+    "south": "xchemical:block/analyzer_side",
+    "east": "xchemical:block/analyzer_side",
+    "west": "xchemical:block/analyzer_side",
+    "up": "xchemical:block/analyzer_top",
+    "down": "xchemical:block/analyzer_top",
+    "particle": "xchemical:block/analyzer_side"
+  }
+}

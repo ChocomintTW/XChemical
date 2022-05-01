@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "xchemical:block/analyzer"
+    },
+    "facing=south": {
+      "model": "xchemical:block/analyzer",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "xchemical:block/analyzer",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "xchemical:block/analyzer",
+      "y": 270
+    }
+  }
+}
