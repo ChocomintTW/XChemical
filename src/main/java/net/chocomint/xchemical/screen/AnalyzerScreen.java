@@ -10,8 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class AnalyzerScreen extends HandledScreen<AnalyzerScreenHandler> {
-	private static final Identifier TEXTURE =
-			new Identifier(XChemical.MOD_ID, "textures/gui/analyzer_gui.png");
+	private static final Identifier TEXTURE = new Identifier(XChemical.MOD_ID, "textures/gui/analyzer_gui.png");
 
 	public AnalyzerScreen(AnalyzerScreenHandler handler, PlayerInventory inventory, Text title) {
 		super(handler, inventory, title);

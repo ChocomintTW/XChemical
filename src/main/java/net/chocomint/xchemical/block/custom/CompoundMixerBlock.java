@@ -1,6 +1,6 @@
 package net.chocomint.xchemical.block.custom;
 
-import net.chocomint.xchemical.block.entity.AnalyzerBlockEntity;
+import net.chocomint.xchemical.block.entity.CompoundMixerBlockEntity;
 import net.chocomint.xchemical.block.entity.ModBlockEntities;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -20,17 +20,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class AnalyzerBlock extends BlockWithEntity implements BlockEntityProvider {
+public class CompoundMixerBlock extends BlockWithEntity implements BlockEntityProvider {
 	public static final DirectionProperty FACING = DirectionProperty.of("facing");
 
-	public AnalyzerBlock(Settings settings) {
+	public CompoundMixerBlock(Settings settings) {
 		super(settings);
 	}
 
 	@Nullable
 	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-		return new AnalyzerBlockEntity(pos, state);
+		return new CompoundMixerBlockEntity(pos, state);
 	}
 
 	@Override
@@ -66,8 +66,8 @@ public class AnalyzerBlock extends BlockWithEntity implements BlockEntityProvide
 	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof AnalyzerBlockEntity) {
-				ItemScatterer.spawn(world, pos, (AnalyzerBlockEntity) blockEntity);
+			if (blockEntity instanceof CompoundMixerBlockEntity) {
+				ItemScatterer.spawn(world, pos, (CompoundMixerBlockEntity) blockEntity);
 				world.updateComparators(pos,this);
 			}
 			super.onStateReplaced(state, world, pos, newState, moved);
@@ -77,6 +77,6 @@ public class AnalyzerBlock extends BlockWithEntity implements BlockEntityProvide
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return checkType(type, ModBlockEntities.ANALYZER_BLOCK_ENTITY, AnalyzerBlockEntity::tick);
+		return checkType(type, ModBlockEntities.COMPOUND_MIXER_BLOCK_ENTITY, CompoundMixerBlockEntity::tick);
 	}
 }

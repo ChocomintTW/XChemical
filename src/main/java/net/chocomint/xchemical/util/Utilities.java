@@ -8,6 +8,10 @@ import java.util.List;
 
 public class Utilities {
 
+	public static boolean range(int val, int low, int high) {
+		return val >= low && val <= high;
+	}
+
 	public static boolean isListEqual(List<ItemStack> l1, List<ItemStack> l2) {
 		if (l1 == null || l2 == null)
 			return false;
@@ -71,5 +75,17 @@ public class Utilities {
 			result.add(new ItemStack(itemStack.getItem(), itemStack.getCount()));
 		}
 		return result;
+	}
+
+	public static List<ItemStack> toStackList(List<ElementsInfo.CompoundUnit> source) {
+		if (source == null)
+			return null;
+		else {
+			List<ItemStack> result = new ArrayList<>();
+			for (ElementsInfo.CompoundUnit unit : source) {
+				result.add(unit.toStack());
+			}
+			return result;
+		}
 	}
 }

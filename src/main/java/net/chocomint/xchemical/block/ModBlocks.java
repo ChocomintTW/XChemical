@@ -2,6 +2,7 @@ package net.chocomint.xchemical.block;
 
 import net.chocomint.xchemical.XChemical;
 import net.chocomint.xchemical.block.custom.AnalyzerBlock;
+import net.chocomint.xchemical.block.custom.CompoundMixerBlock;
 import net.chocomint.xchemical.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -17,6 +18,8 @@ public class ModBlocks {
 
 	public static final Block ANALYZER = registerBlock("analyzer",
 			new AnalyzerBlock(FabricBlockSettings.of(Material.METAL).strength(5.0f)), ModItemGroup.MACHINE);
+	public static final Block COMPOUND_MIXER = registerBlock("compound_mixer",
+			new CompoundMixerBlock(FabricBlockSettings.of(Material.METAL).strength(5.0f)), ModItemGroup.MACHINE);
 
 	// Functions
 	private static Block registerBlock(String name, Block block, ItemGroup group) {

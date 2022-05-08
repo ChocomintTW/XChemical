@@ -1,0 +1,23 @@
+{
+  "item.xchemical.compound": "合物",
+
+  "element.xchemical.group.alkali_metal": "鹼金",
+  "element.xchemical.group.alkaline_earth_metal": "鹼土",
+  "element.xchemical.group.transition_metal": "金",
+  "element.xchemical.group.post_transition_metal": "貧金",
+  "element.xchemical.group.metalloid": "類金",
+  "element.xchemical.group.non_metal": "非金",
+  "element.xchemical.group.halogen": "鹵",
+  "element.xchemical.group.noble_gas": "惰氣",
+  "element.xchemical.group.lanthanide": "鑭儔",
+  "element.xchemical.group.actinide": "錒儔",
+  "element.xchemical.group.unknown": "未知",
+
+  "block.xchemical.analyzer": "析儀",
+
+  "itemGroup.xchemical.xchemical": "先進化學",
+  "itemGroup.xchemical.element": "元素",
+  "itemGroup.xchemical.machine": "器械",
+
+  "death.xchemical.sodium_explosion": "%s 以投鈉於水為樂矣"
+}

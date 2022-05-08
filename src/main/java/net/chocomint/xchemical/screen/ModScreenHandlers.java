@@ -9,4 +9,6 @@ public class ModScreenHandlers {
 
 	public static ScreenHandlerType<AnalyzerScreenHandler> ANALYZER_SCREEN_HANDLER =
 			ScreenHandlerRegistry.registerSimple(new Identifier(XChemical.MOD_ID, "analyzer"), AnalyzerScreenHandler::new);
+	public static ScreenHandlerType<CompoundMixerScreenHandler> COMPOUND_MIXER_SCREEN_HANDLER =
+			ScreenHandlerRegistry.registerSimple(new Identifier(XChemical.MOD_ID, "compound_mixer"), CompoundMixerScreenHandler::new);
 }

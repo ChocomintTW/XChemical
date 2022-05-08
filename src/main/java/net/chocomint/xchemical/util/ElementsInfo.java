@@ -1,25 +1,32 @@
 package net.chocomint.xchemical.util;
 
+import net.chocomint.xchemical.item.custom.ElementItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static net.minecraft.util.Formatting.*;
 
 public class ElementsInfo {
 
 	public static final String[] ELEMENTS = {
-			"H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
-			"Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca",
-			"Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn",
-			"Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr",
-			"Nb", "Mo", "Tc", "Rh", "Rh", "Pd", "Ag", "Cd", "In", "Sn",
-			"Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd",
-			"Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb",
-			"Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg",
-			"Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th",
-			"Pa", "U"
+			"H" ,                                                                                                 "He",
+			"Li", "Be",                                                             "B" , "C" , "N" , "O" , "F" , "Ne",
+			"Na", "Mg",                                                             "Al", "Si", "P" , "S" , "Cl", "Ar",
+			"K" , "Ca", "Sc", "Ti", "V" , "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr",
+			"Rb", "Sr", "Y" , "Zr", "Nb", "Mo", "Tc", "Rh", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I" , "Xe",
+			"Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu",
+			                  "Hf", "Ta", "W" , "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn",
+			"Fr", "Ra", "Ac", "Th", "Pa", "U" , "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr",
+			                  "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og"
 	};
+
+	public static final Map<String, ElementItem> SYMBOL_MAP = new HashMap<>();
 
 	public enum Group {
 		ALKALI_METAL("alkali_metal", BLUE),
@@ -46,8 +53,29 @@ public class ElementsInfo {
 			return id;
 		}
 
+		public Formatting getFormat() {
+			return format;
+		}
+
 		public Text getTranslation() {
 			return new TranslatableText("element.xchemical.group." + id).formatted(format);
+		}
+
+		@Override
+		public String toString() {
+			return getTranslation().asString();
+		}
+	}
+
+	public record CompoundUnit(ElementItem element, int amount) {
+
+		public ItemStack toStack() {
+			return new ItemStack(element, amount);
+		}
+
+		public Text toText() {
+			return new LiteralText(element.getSymbol() + (amount == 1 ? "" : amount))
+					.formatted(element.getElementGroup().getFormat());
 		}
 	}
 }

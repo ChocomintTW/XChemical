@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
+	public static final ItemGroup XCHEMICAL = FabricItemGroupBuilder.build(new Identifier(XChemical.MOD_ID, "xchemical"),
+			() -> new ItemStack(ModItems.COMPOUND));
 	public static final ItemGroup ELEMENT = FabricItemGroupBuilder.build(new Identifier(XChemical.MOD_ID, "element"),
 			() -> new ItemStack(ModItems.HYDROGEN));
 	public static final ItemGroup MACHINE = FabricItemGroupBuilder.build(new Identifier(XChemical.MOD_ID, "machine"),

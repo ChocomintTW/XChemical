@@ -36,6 +36,25 @@
   "item.xchemical.bromine": "Bromine",
   "item.xchemical.krypton": "Krypton",
   "item.xchemical.rubidium": "Rubidium",
+  "item.xchemical.strontium": "Strontium",
+  "item.xchemical.yttrium": "Yttrium",
+  "item.xchemical.zirconium": "Zirconium",
+  "item.xchemical.niobium": "Niobium",
+  "item.xchemical.molybdenum": "Molybdenum",
+  "item.xchemical.technetium": "Technetium",
+  "item.xchemical.ruthenium": "Ruthenium",
+  "item.xchemical.rhodium": "Rhodium",
+  "item.xchemical.palladium": "Palladium",
+  "item.xchemical.silver": "Silver",
+  "item.xchemical.cadmium": "Cadmium",
+  "item.xchemical.indium": "Indium",
+  "item.xchemical.tin": "Tin",
+  "item.xchemical.antimony": "Antimony",
+  "item.xchemical.tellurium": "Tellurium",
+  "item.xchemical.iodine": "Iodine",
+  "item.xchemical.xenon": "Xenon",
+
+  "item.xchemical.compound": "Compound",
 
   "element.xchemical.group.alkali_metal": "Alkali Metal",
   "element.xchemical.group.alkaline_earth_metal": "Alkaline Earth Metal",
@@ -51,6 +70,9 @@
 
   "block.xchemical.analyzer": "Analyzer",
 
+  "itemGroup.xchemical.xchemical": "XChemical",
   "itemGroup.xchemical.element": "Element",
-  "itemGroup.xchemical.machine": "Machine"
+  "itemGroup.xchemical.machine": "Machine",
+
+  "death.xchemical.sodium_explosion": "%s thought it's fun to throw sodium into the water"
 }

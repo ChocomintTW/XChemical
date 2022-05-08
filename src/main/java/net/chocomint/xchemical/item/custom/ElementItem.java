@@ -37,4 +37,9 @@ public class ElementItem extends Item {
 	public String getSymbol() {
 		return ElementsInfo.ELEMENTS[index - 1];
 	}
+
+	@Override
+	public String toString() {
+		return getSymbol() + " #" + index + " [" + getElementGroup() + "]";
+	}
 }

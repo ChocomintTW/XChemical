@@ -2,6 +2,7 @@ package net.chocomint.xchemical.block.entity;
 
 import net.chocomint.xchemical.item.inventory.ImplementedInventory;
 import net.chocomint.xchemical.screen.AnalyzerScreenHandler;
+import net.chocomint.xchemical.util.ElementsInfo;
 import net.chocomint.xchemical.util.RecipeMap;
 import net.chocomint.xchemical.util.Utilities;
 import net.minecraft.block.BlockState;
@@ -69,7 +70,7 @@ public class AnalyzerBlockEntity extends BlockEntity implements NamedScreenHandl
 
 			// Vars
 			ItemStack ingredient = entity.getStack(0);
-			List<ItemStack> list = RecipeMap.MAP.get(ingredient.getItem());
+			List<ElementsInfo.CompoundUnit> list = RecipeMap.MAP.get(ingredient.getItem());
 
 			// check
 			List<ItemStack> result = new ArrayList<>();
@@ -78,12 +79,11 @@ public class AnalyzerBlockEntity extends BlockEntity implements NamedScreenHandl
 				if (!s.isEmpty()) result.add(s);
 			}
 
-			CAN_INSERT = Utilities.canInsert(result, list);
-			System.out.println(result + " | " + list);
+			CAN_INSERT = Utilities.canInsert(result, Utilities.toStackList(list));
 
 			if (list != null && CAN_INSERT && !ingredient.isEmpty()) {
 
-				List<ItemStack> mix = Utilities.mixLists(result, list);
+				List<ItemStack> mix = Utilities.mixLists(result, Utilities.toStackList(list));
 				int size = mix.size();
 				for (int i = 0; i < size; i++) {
 					ItemStack stack = mix.get(i);
