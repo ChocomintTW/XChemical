@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "xchemical:sodium"
+    },
+    "title": "ExplosioNa",
+    "description": "",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "xchemical:research/root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "player": [],
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "killer",
+            "predicate": {
+              "type": "minecraft:item"
+            }
+          }
+        ],
+        "killing_blow": {
+          "is_explosion": true,
+          "source_entity": {
+            "type": "minecraft:item"
+          }
+        }
+      }
+    }
+  }
+}

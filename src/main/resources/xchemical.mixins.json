@@ -4,7 +4,8 @@
   "package": "net.chocomint.xchemical.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ItemEntityTickMixin"
+    "ItemEntityTickMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
   ],

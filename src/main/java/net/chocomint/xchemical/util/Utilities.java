@@ -1,12 +1,19 @@
 package net.chocomint.xchemical.util;
 
 import net.chocomint.xchemical.block.entity.AnalyzerBlockEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Utilities {
+
+	public static boolean inHand(PlayerEntity player, Item inHandItem) {
+		return player.getMainHandStack().getItem() == inHandItem || player.getOffHandStack().getItem() == inHandItem;
+	}
 
 	public static boolean range(int val, int low, int high) {
 		return val >= low && val <= high;

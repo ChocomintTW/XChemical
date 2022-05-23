@@ -2,6 +2,7 @@ package net.chocomint.xchemical.util;
 
 import net.chocomint.xchemical.item.custom.ElementItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -76,6 +77,13 @@ public class ElementsInfo {
 		public Text toText() {
 			return new LiteralText(element.getSymbol() + (amount == 1 ? "" : amount))
 					.formatted(element.getElementGroup().getFormat());
+		}
+
+		public NbtCompound toNbt() {
+			NbtCompound nbt = new NbtCompound();
+			nbt.putString("symbol", element.getSymbol());
+			nbt.putInt("amount", amount);
+			return nbt;
 		}
 	}
 }

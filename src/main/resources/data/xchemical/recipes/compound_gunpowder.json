@@ -1,0 +1,13 @@
+{
+  "type": "xchemical:constructor",
+  "Elements": [
+    {"symbol": "C", "amount": 3},
+    {"symbol": "S", "amount": 1},
+    {"symbol": "K", "amount": 2},
+    {"symbol": "N", "amount": 2},
+    {"symbol": "O", "amount": 6}
+  ],
+  "result": {
+    "item": "minecraft:gunpowder"
+  }
+}

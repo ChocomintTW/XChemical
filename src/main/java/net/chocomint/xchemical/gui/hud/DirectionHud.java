@@ -2,6 +2,7 @@ package net.chocomint.xchemical.gui.hud;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.chocomint.xchemical.XChemical;
+import net.chocomint.xchemical.util.Utilities;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -27,8 +28,7 @@ public class DirectionHud extends DrawableHelper {
 
 	public void render(MatrixStack matrices) {
 		ClientPlayerEntity player = client.player;
-		if (player != null &&
-				(player.getMainHandStack().getItem() == Items.COMPASS || player.getOffHandStack().getItem() == Items.COMPASS))
+		if (player != null && Utilities.inHand(player, Items.COMPASS))
 		{
 			float yaw = client.player.getYaw();
 			int dir = Math.round((yaw + 180) / 360 * 256);

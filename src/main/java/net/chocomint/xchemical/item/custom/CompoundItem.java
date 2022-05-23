@@ -52,15 +52,11 @@ public class CompoundItem extends Item {
 	}
 
 	public static void putCompoundUnit(ItemStack stack, CompoundUnit unit) {
-		NbtCompound nbt = new NbtCompound();
-		nbt.putString("symbol", unit.element().getSymbol());
-		nbt.putInt("amount", unit.amount());
-
 		if (!stack.getOrCreateNbt().contains("Elements", 9)) {
 			stack.getOrCreateNbt().put("Elements", new NbtList());
 		}
 
 		NbtList nbtList = stack.getOrCreateNbt().getList("Elements", 10);
-		nbtList.add(nbt);
+		nbtList.add(unit.toNbt());
 	}
 }
