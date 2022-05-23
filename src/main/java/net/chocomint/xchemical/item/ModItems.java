@@ -14,6 +14,9 @@ import static net.chocomint.xchemical.util.ElementsInfo.Group.*;
 public class ModItems {
 	// https://onlinetexttools.com/convert-text-to-image?input=Ga&background-color=rgba(255%2C%20166%2C%20166%2C%200)&width=100&height=100&text-color=rgb(255%2C%20255%2C%2085)&font-size=80&typeface=sans-serif&typeface-url=&align-horizontal=center&align-vertical=bottom&bold=true&italic=false&padding=&text-shadow=&line-height=&format=png
 
+	// Maybe I can make a book to introduce like "Chemist's Journey"
+	// https://www.mcmod.cn/class/19.html
+
 	public static final ElementItem HYDROGEN = registerElement("hydrogen", 1, NON_METAL);
 	public static final ElementItem HELIUM = registerElement("helium", 2, NOBLE_GAS);
 	public static final ElementItem LITHIUM = registerElement("lithium", 3, ALKALI_METAL);
