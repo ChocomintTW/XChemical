@@ -1,5 +1,7 @@
 # XChemical
 
+This project has been uploaded on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/xchemical)!
+
 Welcome to the XChemical repository.
 XChemical is a [Minecraft](https://minecraft.net/) tech mod themed around chemical elements and reactions.
 
