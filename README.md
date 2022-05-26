@@ -7,6 +7,8 @@ XChemical is a [Minecraft](https://minecraft.net/) tech mod themed around chemic
 
 XChemical is licensed under the MIT License
 
+**My website -> [Chocomint's Website](https://chocomint.cf/test.html)**
+
 ## Elements
 Currently, 54 elements are created. It'll be more useful in the future!
 
