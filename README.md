@@ -10,7 +10,7 @@ XChemical is licensed under the MIT License
 **My website -> [Chocomint's Website](https://chocomint.cf/test.html)**
 
 ## Elements
-Currently, 54 elements are created. It'll be more useful in the future!
+Currently, all elements have been created! I'll make them more useful in the future!
 
 ![elements](https://github.com/ChocomintSSR/XChemical/blob/master/src/main/resources/assets/xchemical/github_pictures/elements.png?raw=true)
 
