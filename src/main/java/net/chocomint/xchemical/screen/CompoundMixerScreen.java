@@ -42,7 +42,7 @@ public class CompoundMixerScreen extends HandledScreen<CompoundMixerScreenHandle
 		this.MIX = this.addDrawableChild(new ButtonWidget(x + 135, y + 85, 30, 20,
 				new LiteralText(handler.isCrafting() ? "Stop" : "Mix"), button -> {
 			PacketByteBuf buf = PacketByteBufs.create();
-			buf.writeInt(handler.isCrafting() ? STOP_PROGRESS : START_PROGRESS);
+			buf.writeBoolean(true);
 			ClientPlayNetworking.send(COMPOUND_MIXER_RECEIVER, buf);
 		}));
 	}

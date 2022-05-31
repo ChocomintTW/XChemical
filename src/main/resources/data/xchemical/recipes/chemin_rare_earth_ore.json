@@ -1,0 +1,13 @@
+{
+  "type": "xchemical:chemin",
+  "ore": {
+    "item": "xchemical:rare_earth_ore"
+  },
+  "times": 2,
+  "pools": [
+    { "element": "Y", "prob": 0.5 },
+    { "element": "La", "prob": 0.4 },
+    { "element": "H", "prob": 0.8 },
+    { "element": "Ac", "prob": 0.1 }
+  ]
+}

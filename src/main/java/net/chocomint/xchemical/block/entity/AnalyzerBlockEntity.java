@@ -3,7 +3,7 @@ package net.chocomint.xchemical.block.entity;
 import net.chocomint.xchemical.item.inventory.ImplementedInventory;
 import net.chocomint.xchemical.screen.AnalyzerScreenHandler;
 import net.chocomint.xchemical.util.ElementsInfo;
-import net.chocomint.xchemical.util.RecipeMap;
+import net.chocomint.xchemical.util.CompoundMap;
 import net.chocomint.xchemical.util.Utilities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -65,12 +65,12 @@ public class AnalyzerBlockEntity extends BlockEntity implements NamedScreenHandl
 	public static void tick(World world, BlockPos pos, BlockState state, AnalyzerBlockEntity entity) {
 		if (!world.isClient()) {
 
-			if (RecipeMap.MAP.isEmpty())
-				RecipeMap.init();
+			if (CompoundMap.MAP.isEmpty())
+				CompoundMap.init();
 
 			// Vars
 			ItemStack ingredient = entity.getStack(0);
-			List<ElementsInfo.CompoundUnit> list = RecipeMap.MAP.get(ingredient.getItem());
+			List<ElementsInfo.CompoundUnit> list = CompoundMap.MAP.get(ingredient.getItem());
 
 			// check
 			List<ItemStack> result = new ArrayList<>();
@@ -79,7 +79,7 @@ public class AnalyzerBlockEntity extends BlockEntity implements NamedScreenHandl
 				if (!s.isEmpty()) result.add(s);
 			}
 
-			CAN_INSERT = Utilities.canInsert(result, Utilities.toStackList(list));
+			CAN_INSERT = Utilities.canInsert(result, Utilities.toStackList(list), RESULT_SIZE);
 
 			if (list != null && CAN_INSERT && !ingredient.isEmpty()) {
 

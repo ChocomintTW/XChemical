@@ -20,7 +20,7 @@ import static net.chocomint.xchemical.util.ElementsInfo.SYMBOL_MAP;
 
 public class CompoundItem extends Item {
 	public CompoundItem(Settings settings) {
-		super(settings.group(ModItemGroup.XCHEMICAL));
+		super(settings);
 	}
 
 	@Override

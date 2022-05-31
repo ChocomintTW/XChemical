@@ -2,6 +2,7 @@ package net.chocomint.xchemical.block;
 
 import net.chocomint.xchemical.XChemical;
 import net.chocomint.xchemical.block.custom.AnalyzerBlock;
+import net.chocomint.xchemical.block.custom.CheMinBlock;
 import net.chocomint.xchemical.block.custom.CompoundMixerBlock;
 import net.chocomint.xchemical.block.custom.ConstructorBlock;
 import net.chocomint.xchemical.item.ModItemGroup;
@@ -23,6 +24,11 @@ public class ModBlocks {
 			new CompoundMixerBlock(FabricBlockSettings.of(Material.METAL).strength(5.0f)), ModItemGroup.MACHINE);
 	public static final Block CONSTRUCTOR = registerBlock("constructor",
 			new ConstructorBlock(FabricBlockSettings.of(Material.METAL).strength(5.0f)), ModItemGroup.MACHINE);
+	public static final Block CHEMIN = registerBlock("chemin",
+			new CheMinBlock(FabricBlockSettings.of(Material.METAL).strength(5.0f)), ModItemGroup.MACHINE);
+
+	public static final Block RARE_EARTH_ORE = registerBlock("rare_earth_ore",
+			new Block(FabricBlockSettings.of(Material.STONE).strength(20.0f)), ModItemGroup.XCHEMICAL);
 
 	// Functions
 	private static Block registerBlock(String name, Block block, ItemGroup group) {

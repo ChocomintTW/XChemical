@@ -3,10 +3,7 @@ package net.chocomint.xchemical;
 import net.chocomint.xchemical.block.ModBlocks;
 import net.chocomint.xchemical.event.ModEvents;
 import net.chocomint.xchemical.gui.hud.DirectionHud;
-import net.chocomint.xchemical.screen.AnalyzerScreen;
-import net.chocomint.xchemical.screen.CompoundMixerScreen;
-import net.chocomint.xchemical.screen.ConstructorScreen;
-import net.chocomint.xchemical.screen.ModScreenHandlers;
+import net.chocomint.xchemical.screen.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -23,10 +20,12 @@ public class ClientMod implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ANALYZER, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COMPOUND_MIXER, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CONSTRUCTOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHEMIN, RenderLayer.getCutout());
 
 		ScreenRegistry.register(ModScreenHandlers.ANALYZER_SCREEN_HANDLER, AnalyzerScreen::new);
 		ScreenRegistry.register(ModScreenHandlers.COMPOUND_MIXER_SCREEN_HANDLER, CompoundMixerScreen::new);
 		ScreenRegistry.register(ModScreenHandlers.CONSTRUCTOR_SCREEN_HANDLER, ConstructorScreen::new);
+		ScreenRegistry.register(ModScreenHandlers.CHEMIN_SCREEN_HANDLER, CheMinScreen::new);
 
 		ModEvents.registerClientEvents();
 	}

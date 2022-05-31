@@ -25,16 +25,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class CompoundMixerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-	public static final int START_PROGRESS = 1;
-	public static final int STOP_PROGRESS = 2;
+import java.util.concurrent.atomic.AtomicBoolean;
 
+public class CompoundMixerBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 	private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
 	private final PropertyDelegate propertyDelegate;
 	private int progress = 0;
 	private int maxProgress = 106;
-	private boolean isMixPressed = false;
+	private boolean startProgress = false;
 
 	public CompoundMixerBlockEntity(BlockPos pos, BlockState state) {
 		super(ModBlockEntities.COMPOUND_MIXER_BLOCK_ENTITY, pos, state);
@@ -95,17 +94,17 @@ public class CompoundMixerBlockEntity extends BlockEntity implements NamedScreen
 		if (!world.isClient())
 		{
 			ServerPlayNetworking.registerGlobalReceiver(CompoundMixerScreen.COMPOUND_MIXER_RECEIVER,
-					(server, player, handler1, buf, responseSender) -> entity.setMixPressed(buf.readInt() == START_PROGRESS));
+					(server, player, handler1, buf, responseSender) -> entity.startProgress = true);
 
-			if (!entity.allEmpty() && entity.isMixPressed) {
+			if (!entity.allEmpty() && entity.startProgress) {
 				entity.progress++;
 				if (entity.progress > entity.maxProgress) {
 					craftItem(entity);
-					entity.setMixPressed(false);
+					entity.startProgress = false;
 				}
 			} else {
 				entity.resetProgress();
-				entity.setMixPressed(false);
+				entity.startProgress = false;
 			}
 		}
 	}
@@ -135,10 +134,6 @@ public class CompoundMixerBlockEntity extends BlockEntity implements NamedScreen
 
 	private void resetProgress() {
 		this.progress = 0;
-	}
-
-	public void setMixPressed(boolean isPressed) {
-		this.isMixPressed = isPressed;
 	}
 
 	public static String worldClass(World world) {

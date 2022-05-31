@@ -39,7 +39,7 @@ public class ElementsInfo {
 		HALOGEN("halogen", GOLD),
 		NOBLE_GAS("noble_gas", DARK_PURPLE),
 		LANTHANIDE("lanthanide", RED),
-		ACTINIDE("actinide", DARK_RED),
+		ACTINIDE("actinide", DARK_GREEN),
 		UNKNOWN("unknown", GRAY);
 
 		final String id;

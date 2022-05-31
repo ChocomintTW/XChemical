@@ -51,7 +51,7 @@ public class AnalyzerBlock extends BlockWithEntity implements BlockEntityProvide
 
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		if (!world.isClient) {
+		if (!world.isClient()) {
 			player.getInventory().getStack(0);
 			NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
 

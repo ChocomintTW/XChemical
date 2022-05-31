@@ -8,11 +8,17 @@ import net.minecraft.item.Items;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Utilities {
 
 	public static boolean inHand(PlayerEntity player, Item inHandItem) {
 		return player.getMainHandStack().getItem() == inHandItem || player.getOffHandStack().getItem() == inHandItem;
+	}
+
+	public static boolean probability(double prob) {
+		Random random = new Random();
+		return random.nextDouble() <= prob;
 	}
 
 	public static boolean range(int val, int low, int high) {
@@ -33,7 +39,7 @@ public class Utilities {
 		}
 	}
 
-	public static boolean canInsert(List<ItemStack> analyzer_result, List<ItemStack> ingredient_result) {
+	public static boolean canInsert(List<ItemStack> analyzer_result, List<ItemStack> ingredient_result, int result_size) {
 		if (ingredient_result == null || analyzer_result.isEmpty() || ingredient_result.isEmpty() ||
 				analyzer_result.size() + ingredient_result.size() <= AnalyzerBlockEntity.RESULT_SIZE)
 			return true;
@@ -46,7 +52,7 @@ public class Utilities {
 					mix.set(i, new ItemStack(stack.getItem(), 64));
 				}
 			}
-			return mix.size() <= AnalyzerBlockEntity.RESULT_SIZE;
+			return mix.size() <= result_size;
 		}
 	}
 

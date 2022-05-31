@@ -22,6 +22,12 @@ public class ElementItem extends Item {
 	}
 
 	@Override
+	public Text getName(ItemStack stack) {
+		return stack.getNbt() != null && stack.getNbt().getInt("atom_mass") != 0 ?
+				super.getName().copy().append(" - " + stack.getNbt().getInt("atom_mass")) : super.getName();
+	}
+
+	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		tooltip.add(this.getElementGroup().getTranslation());
 	}
@@ -41,5 +47,9 @@ public class ElementItem extends Item {
 	@Override
 	public String toString() {
 		return getSymbol() + " #" + index + " [" + getElementGroup() + "]";
+	}
+
+	public static void putAtomMass(ItemStack stack, int mass) {
+		stack.getOrCreateNbt().putInt("atom_mass", mass);
 	}
 }

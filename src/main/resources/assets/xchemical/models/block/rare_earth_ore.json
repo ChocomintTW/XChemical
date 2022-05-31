@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "xchemical:block/rare_earth_ore"
+  }
+}
